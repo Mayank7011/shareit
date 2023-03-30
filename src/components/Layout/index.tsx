@@ -5,9 +5,9 @@ import useAuth from "../../hooks/useAuth";
 import Navbar from "../Navbar";
 import AuthModal from "../Modal/Auth";
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode;
-};
+}
 
 
 const Layout: React.FC = ({ children }) => {
