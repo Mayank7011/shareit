@@ -20,9 +20,13 @@ import OAuthButtons from "./OAuthButtons";
 import ResetPassword from "./ResetPassword";
 import ModalWrapper from "../ModalWrapper";
 
-type AuthModalProps = {};
+interface AuthModalProps extends ModalWrapperProps {
 
-const AuthModal: React.FC<AuthModalProps> = () => {
+  children: React.ReactNode;
+  
+}
+
+const AuthModal: React.FC<AuthModalProps> = ({ children, isOpen, onClose, ...props }) => {
   const [modalState, setModalState] = useRecoilState(authModalState);
   const handleClose = () =>
     setModalState((prev) => ({
@@ -45,7 +49,7 @@ const AuthModal: React.FC<AuthModalProps> = () => {
   }, [user]);
 
   return (
-    <ModalWrapper isOpen={modalState.open} onClose={handleClose}>
+    <ModalWrapper isOpen={isOpen} onClose={onClose} {...props}>
       <ModalHeader display="flex" flexDirection="column" alignItems="center">
         {modalState.view === "login" && "Login"}
         {modalState.view === "signup" && "Sign Up"}
