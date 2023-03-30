@@ -18,8 +18,7 @@ import { auth } from "../../../firebase/clientApp";
 import AuthInputs from "./Inputs";
 import OAuthButtons from "./OAuthButtons";
 import ResetPassword from "./ResetPassword";
-import ModalWrapper from "../ModalWrapper";
-import type { ModalWrapperProps } from "../ModalWrapper";
+import ModalWrapper, { ModalWrapperProps } from "../ModalWrapper";
 
 interface AuthModalProps extends ModalWrapperProps {
 
