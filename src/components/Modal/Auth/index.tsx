@@ -19,7 +19,7 @@ import AuthInputs from "./Inputs";
 import OAuthButtons from "./OAuthButtons";
 import ResetPassword from "./ResetPassword";
 import ModalWrapper from "../ModalWrapper";
-import { ModalWrapperProps } from "../ModalWrapper";
+import ModalWrapperProps from "../ModalWrapper";
 
 interface AuthModalProps extends ModalWrapperProps {
 
