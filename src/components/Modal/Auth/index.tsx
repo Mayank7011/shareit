@@ -18,15 +18,11 @@ import { auth } from "../../../firebase/clientApp";
 import AuthInputs from "./Inputs";
 import OAuthButtons from "./OAuthButtons";
 import ResetPassword from "./ResetPassword";
-import ModalWrapper, { ModalWrapperProps } from "../ModalWrapper";
+import ModalWrapper from "../ModalWrapper";
 
-interface AuthModalProps extends ModalWrapperProps {
+type AuthModalProps = {};
 
-  children: React.ReactNode;
-  
-}
-
-const AuthModal: React.FC<AuthModalProps> = ({ children, isOpen, onClose, ...props }) => {
+const AuthModal: React.FC<AuthModalProps> = () => {
   const [modalState, setModalState] = useRecoilState(authModalState);
   const handleClose = () =>
     setModalState((prev) => ({
@@ -49,7 +45,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ children, isOpen, onClose, ...pro
   }, [user]);
 
   return (
-    <ModalWrapper isOpen={isOpen} onClose={onClose} {...props}>
+    <ModalWrapper isOpen={modalState.open} onClose={handleClose}>
       <ModalHeader display="flex" flexDirection="column" alignItems="center">
         {modalState.view === "login" && "Login"}
         {modalState.view === "signup" && "Sign Up"}
