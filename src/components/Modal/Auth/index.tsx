@@ -83,9 +83,9 @@ const AuthModal: React.FC<AuthModalProps> = () => {
               )}}
           {{false ? (
                 <Flex
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="center"
+                  direction="column",
+                  justifyContent="center",
+                  alignItems="center",
                   height="100%"
                 >
                 </Flex>
