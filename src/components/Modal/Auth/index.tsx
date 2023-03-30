@@ -80,7 +80,7 @@ const AuthModal: React.FC<AuthModalProps> = () => {
                     You are logged in. You will be redirected soon
                   </Text>
                 </>
-              )} */}
+              )}}
           {{false ? (
                 <Flex
                   direction="column"
@@ -90,7 +90,7 @@ const AuthModal: React.FC<AuthModalProps> = () => {
                 >
                 </Flex>
               ) : (
-              )} */}
+              )}}
         </Flex>
       </ModalBody>
     </ModalWrapper>
