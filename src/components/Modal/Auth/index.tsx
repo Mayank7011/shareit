@@ -66,9 +66,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
       </ModalBody>
     </ModalWrapper>
   );
-  
-};
-<AuthModal>
+  <AuthModal>
   <Flex
     direction="column"
     alignItems="center"
@@ -78,3 +76,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
     {/* ... */}
   </Flex>
 </AuthModal>
+  
+};
+
+export default AuthModal;
