@@ -31,10 +31,6 @@ const AuthModal: React.FC<AuthModalProps> = () => {
   const currentUser = useRecoilValue(userState);
   const [user, error] = useAuthState(auth);
 
-  // Can implement at the end
-  // useEffect(() => {
-  //   if (currentUser) handleClose();
-  // }, [currentUser]);
   const toggleView = (view: string) => {
     setModalState({
       ...modalState,
@@ -76,6 +72,25 @@ const AuthModal: React.FC<AuthModalProps> = () => {
           ) : (
             <ResetPassword toggleView={toggleView} />
           )}
+         
+          {{user && !currentUser && (
+                <>
+                  <Spinner size="lg" mt={2} mb={2} />
+                  <Text fontSize="8pt" textAlign="center" color="blue.500">
+                    You are logged in. You will be redirected soon
+                  </Text>
+                </>
+              )} */}
+          {{false ? (
+                <Flex
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  height="100%"
+                >
+                </Flex>
+              ) : (
+              )} */}
         </Flex>
       </ModalBody>
     </ModalWrapper>
