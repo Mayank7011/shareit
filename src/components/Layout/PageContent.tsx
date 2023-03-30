@@ -6,6 +6,11 @@ interface PageContentLayoutProps {
 }
 
 // Assumes array of two children are passed
+type PageContentLayoutProps = {
+  children: React.ReactNode;
+  maxWidth?: string;
+};
+
 const PageContentLayout: React.FC<PageContentLayoutProps> = ({
   children,
   maxWidth,
