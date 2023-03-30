@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/clientApp";
 import useAuth from "../../hooks/useAuth";
@@ -10,7 +10,7 @@ interface LayoutProps {
 }
 
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
   // useAuth(); // will implement later at end of tutorial
 
   return (
