@@ -20,9 +20,12 @@ import OAuthButtons from "./OAuthButtons";
 import ResetPassword from "./ResetPassword";
 import ModalWrapper from "../ModalWrapper";
 
-type AuthModalProps = {};
+type AuthModalProps = {
+  children: React.ReactNode;
+};
 
-const AuthModal: React.FC<AuthModalProps> = () => {
+
+const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
   const [modalState, setModalState] = useRecoilState(authModalState);
   const handleClose = () =>
     setModalState((prev) => ({
@@ -59,42 +62,19 @@ const AuthModal: React.FC<AuthModalProps> = () => {
         justifyContent="center"
         pb={6}
       >
-        <Flex
-          direction="column"
-          alignItems="center"
-          justifyContent="center"
-          width="70%"
-        >
-          {modalState.view === "login" || modalState.view === "signup" ? (
-            <>
-              <OAuthButtons />
-              OR
-              <AuthInputs toggleView={toggleView} />
-            </>
-          ) : (
-            <ResetPassword toggleView={toggleView} />
-          )}
-         
-          {user && !currentUser && (
-            <>
-              <Spinner size="lg" mt={2} mb={2} />
-              <Text fontSize="8pt" textAlign="center" color="blue.500">
-                You are logged in. You will be redirected soon
-              </Text>
-            </>
-          )}
-          {!false ? (
-            <Flex
-              direction="column"
-              justifyContent="center"
-              alignItems="center"
-              height="100%"
-            >
-            </Flex>
-          ) : null}
-        </Flex>
+      {children}
       </ModalBody>
     </ModalWrapper>
   );
+  
 };
-export default AuthModal;
+<AuthModal>
+  <Flex
+    direction="column"
+    alignItems="center"
+    justifyContent="center"
+    width="70%"
+  >
+    {/* ... */}
+  </Flex>
+</AuthModal>
